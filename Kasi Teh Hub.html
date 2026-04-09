@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KASI TEH HUB PTY LTD | Skills That Open Doors</title>
+  <meta name="description" content="KASI TEH HUB PTY LTD offers beginner-friendly digital skills training, CV support, job application help, education application support, and business tools in Refilwe and Cullinan." />
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0d1b2f;
+      --card: rgba(255,255,255,0.08);
+      --card-strong: rgba(255,255,255,0.12);
+      --text: #f8fbff;
+      --muted: #b9c7d8;
+      --primary: #3dd9eb;
+      --secondary: #5b8cff;
+      --accent: #3ce49f;
+      --border: rgba(255,255,255,0.14);
+      --shadow: 0 20px 60px rgba(0,0,0,0.35);
+      --radius: 24px;
+      --radius-sm: 16px;
+      --max-width: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(61, 217, 235, 0.18), transparent 32%),
+        radial-gradient(circle at top right, rgba(91, 140, 255, 0.16), transparent 28%),
+        linear-gradient(180deg, #06101d 0%, #091525 45%, #06101d 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .glass {
+      background: var(--card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .section {
+      padding: 90px 0;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 14px;
+      font-weight: bold;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .section-text {
+      color: var(--muted);
+      max-width: 720px;
+      font-size: 1.05rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 24px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: bold;
+      transition: 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #04111c;
+      box-shadow: 0 14px 30px rgba(61, 217, 235, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 34px rgba(61, 217, 235, 0.35);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.12);
+      transform: translateY(-2px);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5, 10, 18, 0.55);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 78px;
+    }
+
+    .brand h1 {
+      font-size: 1.1rem;
+      line-height: 1.1;
+    }
+
+    .brand span {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.96rem;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    .hero {
+      padding: 80px 0 70px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(61, 217, 235, 0.12);
+      color: #c6fbff;
+      border: 1px solid rgba(61, 217, 235, 0.24);
+      padding: 10px 16px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+    }
+
+    .hero h2 {
+      font-size: clamp(2.4rem, 6vw, 4.8rem);
+      line-height: 1.05;
+      margin-bottom: 18px;
+    }
+
+    .hero h2 .accent-1 { color: var(--primary); }
+    .hero h2 .accent-2 { color: var(--secondary); }
+    .hero h2 .accent-3 { color: var(--accent); }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 670px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin: 28px 0 34px;
+    }
+
+    .hero-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .mini-card {
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+      color: #dce6f2;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .hero-panel {
+      padding: 18px;
+      border-radius: 32px;
+    }
+
+    .panel-inner {
+      border-radius: 28px;
+      padding: 26px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .info-card {
+      padding: 22px;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+      margin-bottom: 16px;
+    }
+
+    .info-card strong {
+      display: block;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+
+    .info-card p,
+    .info-card li {
+      color: var(--muted);
+    }
+
+    .info-card ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .stat-box {
+      padding: 18px;
+      border-radius: 18px;
+      text-align: center;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+    }
+
+    .stat-box h4 {
+      color: var(--primary);
+      font-size: 1.7rem;
+      margin-bottom: 4px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .about-card,
+    .audience-card,
+    .contact-card,
+    .cta-box {
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+
+    .list {
+      display: grid;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .list-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+    }
+
+    .list-item .icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(61, 217, 235, 0.14);
+      color: var(--primary);
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+      margin-top: 42px;
+    }
+
+    .service-card {
+      padding: 26px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      transition: 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      inset: auto -40px -40px auto;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, rgba(61, 217, 235, 0.16), transparent 65%);
+      pointer-events: none;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(61, 217, 235, 0.35);
+    }
+
+    .service-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .service-card h4 {
+      font-size: 1.18rem;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+    }
+
+    .audience-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .tag {
+      padding: 12px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      color: #e9f3ff;
+      font-weight: bold;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .why-card {
+      padding: 24px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+    }
+
+    .why-card h4 {
+      margin-bottom: 10px;
+    }
+
+    .why-card p {
+      color: var(--muted);
+    }
+
+    .cta-wrap {
+      padding-bottom: 90px;
+    }
+
+    .cta-box {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      align-items: center;
+      background: linear-gradient(135deg, rgba(61, 217, 235, 0.12), rgba(91, 140, 255, 0.1), rgba(60, 228, 159, 0.08));
+      border: 1px solid rgba(61, 217, 235, 0.2);
+    }
+
+    .cta-box p {
+      color: var(--muted);
+      margin-top: 12px;
+      max-width: 650px;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 12px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 36px;
+    }
+
+    .contact-card p,
+    .contact-card li {
+      color: var(--muted);
+    }
+
+    .contact-list {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .contact-list strong {
+      color: var(--text);
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .input,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      border-radius: 14px;
+      padding: 14px 16px;
+      outline: none;
+      font: inherit;
+    }
+
+    .input::placeholder,
+    textarea::placeholder {
+      color: #91a3b8;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-note {
+      font-size: 0.95rem;
+      color: var(--muted);
+      min-height: 22px;
+    }
+
+    .site-footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 22px 0 34px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .grid-2,
+      .cta-box,
+      .contact-grid,
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .cta-actions {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .nav-links {
+        position: absolute;
+        top: 78px;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        background: rgba(5, 10, 18, 0.96);
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 16px 24px;
+        border-top: 1px solid rgba(255,255,255,0.06);
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .hero-features,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .section {
+        padding: 72px 0;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .container {
+        width: min(var(--max-width), calc(100% - 1.2rem));
+      }
+
+      .hero {
+        padding-top: 52px;
+      }
+
+      .about-card,
+      .audience-card,
+      .contact-card,
+      .cta-box,
+      .service-card,
+      .info-card,
+      .hero-panel {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#home" class="brand">
+        <h1>KASI TEH HUB PTY LTD</h1>
+        <span>Skills That Open Doors</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#market">Target Market</a>
+        <a href="#why-us">Why Us</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle">Menu</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-badge">Beginner-Friendly Digital Skills Training</div>
+          <h2>
+            Build skills for <span class="accent-1">jobs</span>,
+            <span class="accent-2">education</span>, and
+            <span class="accent-3">business growth</span>
+          </h2>
+          <p>
+            KASI TEH HUB PTY LTD helps unemployed youth, school leavers, adults, and small business owners gain practical digital skills, career support, and confidence to succeed in today’s online world.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Register Today</a>
+            <a href="https://wa.me/27799491794" class="btn btn-secondary" target="_blank" rel="noopener">WhatsApp Us</a>
+          </div>
+
+          <div class="hero-features">
+            <div class="mini-card">No Experience Needed</div>
+            <div class="mini-card">Practical Hands-On Learning</div>
+            <div class="mini-card">Affordable Community Support</div>
+          </div>
+        </div>
+
+        <div class="hero-panel glass">
+          <div class="panel-inner">
+            <div class="info-card">
+              <span class="eyebrow">Popular Program</span>
+              <strong>Digital Skills Starter</strong>
+              <p>Learn Microsoft Word, Excel, PowerPoint, email, internet basics, CV writing, online applications, and business support tools.</p>
+            </div>
+
+            <div class="info-card">
+              <strong>What We Help With</strong>
+              <ul>
+                <li>✔ CV writing and job applications</li>
+                <li>✔ Z83 and government job support</li>
+                <li>✔ Bursary, university, and NSFAS applications</li>
+                <li>✔ Business posters and online promotion</li>
+              </ul>
+            </div>
+
+            <div class="stats">
+              <div class="stat-box">
+                <h4>Word</h4>
+                <p>Office Skills</p>
+              </div>
+              <div class="stat-box">
+                <h4>CV</h4>
+                <p>Career Support</p>
+              </div>
+              <div class="stat-box">
+                <h4>Online</h4>
+                <p>Applications</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container grid-2">
+        <div class="about-card glass">
+          <span class="eyebrow">About Us</span>
+          <h3 class="section-title">A local solution for digital empowerment</h3>
+          <p class="section-text">
+            KASI TEH HUB PTY LTD is a community-based digital skills and career support business based in Refilwe, Cullinan. We provide simple, step-by-step training for people with little or no computer experience.
+          </p>
+          <div class="list">
+            <div class="list-item">
+              <div class="icon">1</div>
+              <div>
+                <strong>Beginner-Friendly</strong>
+                <p>Training is designed for people starting from zero.</p>
+              </div>
+            </div>
+            <div class="list-item">
+              <div class="icon">2</div>
+              <div>
+                <strong>Practical Results</strong>
+                <p>We do not focus on theory only. We help learners complete real tasks.</p>
+              </div>
+            </div>
+            <div class="list-item">
+              <div class="icon">3</div>
+              <div>
+                <strong>Community Impact</strong>
+                <p>We help local people access jobs, education, and business opportunities.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="audience-card glass" id="market">
+          <span class="eyebrow">Target Market</span>
+          <h3 class="section-title">Who we serve</h3>
+          <p class="section-text">
+            Our target market includes unemployed youth, school leavers, adults, and small business owners in Refilwe, Cullinan, and surrounding communities who need basic digital skills.
+          </p>
+          <div class="audience-tags">
+            <div class="tag">Unemployed Youth</div>
+            <div class="tag">School Leavers</div>
+            <div class="tag">Adults</div>
+            <div class="tag">Parents</div>
+            <div class="tag">Small Business Owners</div>
+            <div class="tag">Beginners</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <span class="eyebrow">Our Services</span>
+        <h3 class="section-title">Practical training and support that opens doors</h3>
+        <p class="section-text">
+          We help learners gain digital confidence and complete important tasks that improve their job, education, and business opportunities.
+        </p>
+
+        <div class="services-grid">
+          <article class="service-card glass">
+            <div class="service-icon">💻</div>
+            <h4>Computer Skills Training</h4>
+            <p>Learn Microsoft Word, Excel, PowerPoint, email use, typing, and internet basics.</p>
+          </article>
+
+          <article class="service-card glass">
+            <div class="service-icon">📄</div>
+            <h4>CV and Job Support</h4>
+            <p>Get help creating professional CVs, applying for jobs, and completing Z83 forms.</p>
+          </article>
+
+          <article class="service-card glass">
+            <div class="service-icon">🎓</div>
+            <h4>Education Applications</h4>
+            <p>Support with university, college, bursary, and NSFAS applications from start to finish.</p>
+          </article>
+
+          <article class="service-card glass">
+            <div class="service-icon">📱</div>
+            <h4>Business Digital Tools</h4>
+            <p>Help for small businesses with posters, online promotion, and simple digital content.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="why-us">
+      <div class="container">
+        <span class="eyebrow">Why Choose Us</span>
+        <h3 class="section-title">What makes KASI TECH HUB different</h3>
+        <p class="section-text">
+          KASI TEH HUB PTY LTD combines affordable local access, personal support, and hands-on guidance for real-life digital needs.
+        </p>
+
+        <div class="why-grid">
+          <div class="why-card glass">
+            <h4>Affordable and Accessible</h4>
+            <p>Our services are designed to be reachable for the local community, especially beginners and job seekers.</p>
+          </div>
+          <div class="why-card glass">
+            <h4>Hands-On Learning</h4>
+            <p>Learners get practical assistance with real applications instead of theory only.</p>
+          </div>
+          <div class="why-card glass">
+            <h4>Personal Guidance</h4>
+            <p>We support learners step by step so they can build confidence and complete tasks successfully.</p>
+          </div>
+          <div class="why-card glass">
+            <h4>Community-Based Impact</h4>
+            <p>We focus on solving the local digital skills gap and creating better access to opportunity.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-wrap">
+      <div class="container">
+        <div class="cta-box glass">
+          <div>
+            <span class="eyebrow">Start Today</span>
+            <h3 class="section-title">Ready to gain skills that open doors?</h3>
+            <p>
+              Join KASI TEH HUB PTY LTD and build digital confidence for work, education, and business growth.
+            </p>
+          </div>
+          <div class="cta-actions">
+            <a href="https://wa.me/27799491794" class="btn btn-primary" target="_blank" rel="noopener">WhatsApp Now</a>
+            <a href="#contact" class="btn btn-secondary">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <span class="eyebrow">Contact Us</span>
+        <h3 class="section-title">Get in touch</h3>
+        <p class="section-text">Ask a question, register your interest, or send us a message today.</p>
+
+        <div class="contact-grid">
+          <div class="contact-card glass">
+            <h4>Business Details</h4>
+            <ul class="contact-list">
+              <li><strong>Business Name:</strong> KASI TEH HUB PTY LTD</li>
+              <li><strong>Location:</strong> 1609 Zwane Street, Refilwe</li>
+              <li><strong>Phone / WhatsApp:</strong> 079 949 1794</li>
+              <li><strong>Email:</strong> thabangseloane97@gmail.com</li>
+              <li><strong>Tagline:</strong> Skills That Open Doors</li>
+            </ul>
+          </div>
+
+          <div class="contact-card glass">
+            <h4>Send a Message</h4>
+            <form class="contact-form" id="contactForm" action="https://formsubmit.co/thabangseloane97@gmail.com" method="POST">
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_subject" value="New Message from KASI TEH HUB Website" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_next" value="https://example.com/thanks" />
+              <input class="input" type="text" id="name" name="name" placeholder="Your name" required />
+              <input class="input" type="email" id="email" name="email" placeholder="Your email" required />
+              <textarea id="message" name="message" placeholder="Write your message here" required></textarea>
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <p class="form-note" id="formNote"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 KASI TEH HUB PTY LTD. Skills That Open Doors.</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    const navAnchors = document.querySelectorAll('.nav-links a');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    navAnchors.forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+      });
+    });
+
+    const sections = document.querySelectorAll('section[id]');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navAnchors.forEach(link => link.classList.remove('active'));
+          const activeLink = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+          if (activeLink) activeLink.classList.add('active');
+        }
+      });
+    }, { threshold: 0.35 });
+
+    sections.forEach(section => observer.observe(section));
+
+    const contactForm = document.getElementById('contactForm');
+    const formNote = document.getElementById('formNote');
+
+    contactForm.addEventListener('submit', function () {
+      formNote.textContent = 'Sending your message...';
+    });
+  </script>
+</body>
+</html>
